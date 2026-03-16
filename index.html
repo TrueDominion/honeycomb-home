@@ -15,17 +15,118 @@
   <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
     <div class="nav__inner">
       <a href="index.html" class="nav__brand" aria-label="Honeycomb Home">
-        <!-- Logo: single-stroke hexagon, no fill, precise geometry -->
-        <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M15 1.5 L28 8.75 L28 25.25 L15 32.5 L2 25.25 L2 8.75 Z"
-                stroke="#3D4450" stroke-width="1.5" fill="none"/>
-          <!-- Inner honeycomb cell cluster — 3 cells, hairline -->
-          <path d="M15 12 L19.33 14.5 L19.33 19.5 L15 22 L10.67 19.5 L10.67 14.5 Z"
-                stroke="#3D4450" stroke-width="0.9" fill="none" opacity="0.5"/>
-          <path d="M19.33 9.5 L23.66 12 L23.66 17 L19.33 19.5 L15 17 L15 12 Z"
-                stroke="#3D4450" stroke-width="0.9" fill="none" opacity="0.5"/>
-          <path d="M10.67 9.5 L15 12 L15 17 L10.67 19.5 L6.34 17 L6.34 12 Z"
-                stroke="#3D4450" stroke-width="0.9" fill="none" opacity="0.5"/>
+        <!-- Logo: botanical illustration mark — circle, hex cells, engraved bee, lavender sprigs -->
+        <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Outer circle -->
+          <circle cx="50" cy="50" r="47" stroke="#3D4450" stroke-width="2" fill="#F2EDE4"/>
+          <!-- Honeycomb cell cluster — top center, slate, architectural -->
+          <g stroke="#3D4450" stroke-width="1.4" fill="none">
+            <!-- Center top cell -->
+            <path d="M50 16 L56 19.46 L56 26.38 L50 29.85 L44 26.38 L44 19.46 Z"/>
+            <!-- Left cell -->
+            <path d="M44 19.46 L50 22.92 L50 29.85 L44 33.31 L38 29.85 L38 22.92 Z"/>
+            <!-- Right cell -->
+            <path d="M56 19.46 L62 22.92 L62 29.85 L56 33.31 L50 29.85 L50 22.92 Z"/>
+          </g>
+          <!-- Engraved bee — honey gold, center -->
+          <g stroke="#C8902A" stroke-width="0.9" fill="none">
+            <!-- Abdomen — segmented, teardrop -->
+            <path d="M50 72 Q44 68 43 62 Q42 55 44 50 Q47 45 50 44 Q53 45 56 50 Q58 55 57 62 Q56 68 50 72 Z" stroke-width="1"/>
+            <!-- Abdomen segments -->
+            <path d="M44.5 52 Q50 54 55.5 52" stroke-width="0.7" opacity="0.8"/>
+            <path d="M43.8 56 Q50 58.5 56.2 56" stroke-width="0.7" opacity="0.8"/>
+            <path d="M44.2 60 Q50 62 55.8 60" stroke-width="0.7" opacity="0.8"/>
+            <path d="M45.5 64 Q50 65.5 54.5 64" stroke-width="0.7" opacity="0.7"/>
+            <path d="M47 68 Q50 69 53 68" stroke-width="0.7" opacity="0.6"/>
+            <!-- Thorax -->
+            <ellipse cx="50" cy="46" rx="5" ry="4" stroke-width="1"/>
+            <!-- Thorax fur texture -->
+            <path d="M46 44 Q50 42 54 44" stroke-width="0.6" opacity="0.7"/>
+            <path d="M45.5 46.5 Q50 45 54.5 46.5" stroke-width="0.6" opacity="0.6"/>
+            <!-- Head -->
+            <circle cx="50" cy="40" r="4.2" stroke-width="1"/>
+            <!-- Eyes -->
+            <circle cx="47.8" cy="39" r="1.1" fill="#C8902A" stroke="none" opacity="0.9"/>
+            <circle cx="52.2" cy="39" r="1.1" fill="#C8902A" stroke="none" opacity="0.9"/>
+            <!-- Antennae -->
+            <path d="M48 36.5 Q45 32 41 30" stroke-width="0.8" stroke-linecap="round"/>
+            <path d="M52 36.5 Q55 32 59 30" stroke-width="0.8" stroke-linecap="round"/>
+            <circle cx="41" cy="30" r="1" fill="#C8902A" stroke="none" opacity="0.8"/>
+            <circle cx="59" cy="30" r="1" fill="#C8902A" stroke="none" opacity="0.8"/>
+            <!-- Upper wings — left -->
+            <path d="M45 46 Q36 38 32 43 Q30 48 37 52 Q42 54 45 50 Z" stroke-width="0.9"/>
+            <!-- Wing venation left upper -->
+            <path d="M45 46 Q39 44 34 46" stroke-width="0.5" opacity="0.6"/>
+            <path d="M44 48 Q38 47 34 49" stroke-width="0.5" opacity="0.5"/>
+            <path d="M44.5 50 Q39 50 36 51.5" stroke-width="0.5" opacity="0.4"/>
+            <!-- Upper wings — right -->
+            <path d="M55 46 Q64 38 68 43 Q70 48 63 52 Q58 54 55 50 Z" stroke-width="0.9"/>
+            <!-- Wing venation right upper -->
+            <path d="M55 46 Q61 44 66 46" stroke-width="0.5" opacity="0.6"/>
+            <path d="M56 48 Q62 47 66 49" stroke-width="0.5" opacity="0.5"/>
+            <path d="M55.5 50 Q61 50 64 51.5" stroke-width="0.5" opacity="0.4"/>
+            <!-- Lower wings — left -->
+            <path d="M45 50 Q37 50 35 55 Q34 59 40 60 Q44 60 46 56 Z" stroke-width="0.8" opacity="0.85"/>
+            <!-- Lower wings — right -->
+            <path d="M55 50 Q63 50 65 55 Q66 59 60 60 Q56 60 54 56 Z" stroke-width="0.8" opacity="0.85"/>
+            <!-- Legs — 3 pairs -->
+            <path d="M46 50 Q42 53 40 58" stroke-width="0.7" stroke-linecap="round" opacity="0.7"/>
+            <path d="M46 53 Q41 56 39 62" stroke-width="0.7" stroke-linecap="round" opacity="0.7"/>
+            <path d="M47 58 Q44 62 43 67" stroke-width="0.7" stroke-linecap="round" opacity="0.7"/>
+            <path d="M54 50 Q58 53 60 58" stroke-width="0.7" stroke-linecap="round" opacity="0.7"/>
+            <path d="M54 53 Q59 56 61 62" stroke-width="0.7" stroke-linecap="round" opacity="0.7"/>
+            <path d="M53 58 Q56 62 57 67" stroke-width="0.7" stroke-linecap="round" opacity="0.7"/>
+          </g>
+          <!-- Lavender sprigs — left, slate -->
+          <g stroke="#3D4450" stroke-width="0.85" fill="none" opacity="0.75">
+            <!-- Left main stem -->
+            <path d="M28 82 Q26 72 25 60 Q24.5 52 26 44" stroke-linecap="round"/>
+            <!-- Left stem 2 -->
+            <path d="M22 84 Q21 74 22 63 Q23 55 25 48" stroke-linecap="round"/>
+            <!-- Left stem 3 -->
+            <path d="M16 80 Q16 70 18 60 Q20 53 23 47" stroke-linecap="round"/>
+            <!-- Left leaf pairs on stem 1 -->
+            <path d="M26 60 Q22 57 20 59" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M25.5 65 Q29 62 30 64" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M25.5 55 Q21 53 20 55" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M25.8 50 Q29.5 48 30 50" stroke-width="0.7" stroke-linecap="round"/>
+            <!-- Left stem 2 leaves -->
+            <path d="M22 65 Q18 62 17 64" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M22.5 70 Q26 68 26.5 70" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M22 59 Q18 57 17 59" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M22.5 54 Q26 52 26.5 54" stroke-width="0.7" stroke-linecap="round"/>
+            <!-- Left stem 3 leaves -->
+            <path d="M18 63 Q14 60 13 62" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M18.5 68 Q22 66 22.5 68" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M18.5 57 Q14 55 13 57" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M20 52 Q23.5 50 24 52" stroke-width="0.7" stroke-linecap="round"/>
+            <!-- Tip buds left -->
+            <path d="M26 44 Q24 41 26 39 Q28 41 26 44" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M25 48 Q23 45 25 43 Q27 45 25 48" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M23 47 Q21 44 23 42 Q25 44 23 47" stroke-width="0.7" stroke-linecap="round"/>
+          </g>
+          <!-- Lavender sprigs — right, slate (mirrored) -->
+          <g stroke="#3D4450" stroke-width="0.85" fill="none" opacity="0.75" transform="scale(-1,1) translate(-100,0)">
+            <!-- Right is left mirrored -->
+            <path d="M28 82 Q26 72 25 60 Q24.5 52 26 44" stroke-linecap="round"/>
+            <path d="M22 84 Q21 74 22 63 Q23 55 25 48" stroke-linecap="round"/>
+            <path d="M16 80 Q16 70 18 60 Q20 53 23 47" stroke-linecap="round"/>
+            <path d="M26 60 Q22 57 20 59" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M25.5 65 Q29 62 30 64" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M25.5 55 Q21 53 20 55" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M25.8 50 Q29.5 48 30 50" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M22 65 Q18 62 17 64" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M22.5 70 Q26 68 26.5 70" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M22 59 Q18 57 17 59" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M22.5 54 Q26 52 26.5 54" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M18 63 Q14 60 13 62" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M18.5 68 Q22 66 22.5 68" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M18.5 57 Q14 55 13 57" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M20 52 Q23.5 50 24 52" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M26 44 Q24 41 26 39 Q28 41 26 44" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M25 48 Q23 45 25 43 Q27 45 25 48" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M23 47 Q21 44 23 42 Q25 44 23 47" stroke-width="0.7" stroke-linecap="round"/>
+          </g>
         </svg>
         <span class="nav__wordmark">Honeycomb <span>Home</span></span>
       </a>
@@ -348,6 +449,55 @@
     <div class="container">
       <div class="footer__inner">
         <div>
+          <!-- Footer logo mark — smaller, inverted for dark bg -->
+          <div style="margin-bottom:1.25rem;opacity:0.7;">
+            <svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="50" cy="50" r="47" stroke="rgba(242,237,228,0.5)" stroke-width="1.8" fill="none"/>
+              <g stroke="rgba(242,237,228,0.6)" stroke-width="1.4" fill="none">
+                <path d="M50 16 L56 19.46 L56 26.38 L50 29.85 L44 26.38 L44 19.46 Z"/>
+                <path d="M44 19.46 L50 22.92 L50 29.85 L44 33.31 L38 29.85 L38 22.92 Z"/>
+                <path d="M56 19.46 L62 22.92 L62 29.85 L56 33.31 L50 29.85 L50 22.92 Z"/>
+              </g>
+              <g stroke="#C8902A" stroke-width="0.9" fill="none" opacity="0.9">
+                <path d="M50 72 Q44 68 43 62 Q42 55 44 50 Q47 45 50 44 Q53 45 56 50 Q58 55 57 62 Q56 68 50 72 Z" stroke-width="1"/>
+                <path d="M44.5 52 Q50 54 55.5 52" stroke-width="0.7" opacity="0.8"/>
+                <path d="M43.8 56 Q50 58.5 56.2 56" stroke-width="0.7" opacity="0.8"/>
+                <path d="M44.2 60 Q50 62 55.8 60" stroke-width="0.7" opacity="0.8"/>
+                <ellipse cx="50" cy="46" rx="5" ry="4" stroke-width="1"/>
+                <circle cx="50" cy="40" r="4.2" stroke-width="1"/>
+                <circle cx="47.8" cy="39" r="1.1" fill="#C8902A" stroke="none" opacity="0.9"/>
+                <circle cx="52.2" cy="39" r="1.1" fill="#C8902A" stroke="none" opacity="0.9"/>
+                <path d="M48 36.5 Q45 32 41 30" stroke-width="0.8" stroke-linecap="round"/>
+                <path d="M52 36.5 Q55 32 59 30" stroke-width="0.8" stroke-linecap="round"/>
+                <path d="M45 46 Q36 38 32 43 Q30 48 37 52 Q42 54 45 50 Z" stroke-width="0.9"/>
+                <path d="M55 46 Q64 38 68 43 Q70 48 63 52 Q58 54 55 50 Z" stroke-width="0.9"/>
+                <path d="M45 50 Q37 50 35 55 Q34 59 40 60 Q44 60 46 56 Z" stroke-width="0.8" opacity="0.85"/>
+                <path d="M55 50 Q63 50 65 55 Q66 59 60 60 Q56 60 54 56 Z" stroke-width="0.8" opacity="0.85"/>
+              </g>
+              <g stroke="rgba(242,237,228,0.5)" stroke-width="0.8" fill="none">
+                <path d="M28 82 Q26 72 25 60 Q24.5 52 26 44" stroke-linecap="round"/>
+                <path d="M22 84 Q21 74 22 63 Q23 55 25 48" stroke-linecap="round"/>
+                <path d="M26 60 Q22 57 20 59" stroke-width="0.6" stroke-linecap="round"/>
+                <path d="M25.5 65 Q29 62 30 64" stroke-width="0.6" stroke-linecap="round"/>
+                <path d="M25.5 55 Q21 53 20 55" stroke-width="0.6" stroke-linecap="round"/>
+                <path d="M22 65 Q18 62 17 64" stroke-width="0.6" stroke-linecap="round"/>
+                <path d="M22.5 70 Q26 68 26.5 70" stroke-width="0.6" stroke-linecap="round"/>
+                <path d="M26 44 Q24 41 26 39 Q28 41 26 44" stroke-width="0.6" stroke-linecap="round"/>
+                <path d="M25 48 Q23 45 25 43 Q27 45 25 48" stroke-width="0.6" stroke-linecap="round"/>
+              </g>
+              <g stroke="rgba(242,237,228,0.5)" stroke-width="0.8" fill="none" transform="scale(-1,1) translate(-100,0)">
+                <path d="M28 82 Q26 72 25 60 Q24.5 52 26 44" stroke-linecap="round"/>
+                <path d="M22 84 Q21 74 22 63 Q23 55 25 48" stroke-linecap="round"/>
+                <path d="M26 60 Q22 57 20 59" stroke-width="0.6" stroke-linecap="round"/>
+                <path d="M25.5 65 Q29 62 30 64" stroke-width="0.6" stroke-linecap="round"/>
+                <path d="M25.5 55 Q21 53 20 55" stroke-width="0.6" stroke-linecap="round"/>
+                <path d="M22 65 Q18 62 17 64" stroke-width="0.6" stroke-linecap="round"/>
+                <path d="M22.5 70 Q26 68 26.5 70" stroke-width="0.6" stroke-linecap="round"/>
+                <path d="M26 44 Q24 41 26 39 Q28 41 26 44" stroke-width="0.6" stroke-linecap="round"/>
+                <path d="M25 48 Q23 45 25 43 Q27 45 25 48" stroke-width="0.6" stroke-linecap="round"/>
+              </g>
+            </svg>
+          </div>
           <div class="footer__wordmark">Honeycomb <span>Home</span></div>
           <p class="footer__tagline">"A sweet and ordered home"</p>
           <p style="font-size:0.8rem;font-weight:300;opacity:0.35;line-height:1.65;max-width:26ch;">A personal recipe and home management space. Built with care, like everything else here.</p>
