@@ -153,15 +153,22 @@ h5 { font-size: var(--fs-md); font-weight: 400; }
   margin: 0 auto;
   padding: 0 var(--space-8);
 }
-.nav__brand { display: flex; align-items: center; gap: var(--space-3); }
+.nav__brand { display: flex; align-items: center; gap: var(--space-4); }
 .nav__wordmark {
   font-family: var(--ff-display);
   font-size: 1.125rem;
   font-weight: 400;
   color: var(--slate);
   letter-spacing: 0;
+  line-height: 1;
 }
 .nav__wordmark span { color: var(--honey); }
+
+/* Logo mark container — ensures the circle mark renders crisply */
+.nav__brand svg {
+  flex-shrink: 0;
+  display: block;
+}
 .nav__links { display: flex; align-items: center; gap: 0; }
 .nav__link {
   font-family: var(--ff-body);
