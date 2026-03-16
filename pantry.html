@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pantry Tracker — Honeycomb Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand" aria-label="Honeycomb Home — Home">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16 3 L27 9 L27 23 L16 29 L5 23 L5 9 Z" fill="none" stroke="#C8902A" stroke-width="1.8"/>
+          <path d="M16 8 L23 12 L23 20 L16 24 L9 20 L9 12 Z" fill="#C8902A" opacity="0.15"/>
+          <path d="M16 11 L20 13.5 L20 18.5 L16 21 L12 18.5 L12 13.5 Z" fill="#C8902A" opacity="0.4"/>
+          <circle cx="16" cy="16" r="2" fill="#C8902A"/>
+        </svg>
+        <span class="nav__wordmark">Honeycomb <span>Home</span></span>
+      </a>
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="recipes.html" class="nav__link">Recipe Book</a></li>
+        <li><a href="planner.html" class="nav__link">Meal Planner</a></li>
+        <li><a href="pantry.html" class="nav__link">Pantry</a></li>
+        <li><a href="favourites.html" class="nav__link">Favourites</a></li>
+      </ul>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="page-content">
+
+    <!-- PAGE BANNER -->
+    <div class="page-banner">
+      <svg class="page-banner__hex" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M160 20 L290 95 L290 225 L160 300 L30 225 L30 95 Z" fill="none" stroke="#C8902A" stroke-width="1.5"/>
+        <path d="M160 60 L255 115 L255 225 L160 280 L65 225 L65 115 Z" fill="none" stroke="#C8902A" stroke-width="1"/>
+        <path d="M160 100 L225 136 L225 208 L160 244 L95 208 L95 136 Z" fill="#C8902A" opacity="0.06"/>
+      </svg>
+      <div class="container">
+        <div class="page-banner__eyebrow">Know What You Have</div>
+        <h1 class="page-banner__title">Pantry Tracker</h1>
+        <p class="page-banner__desc">A quiet inventory for your kitchen. Update quantities, spot what's running low, and add new items as your pantry grows.</p>
+      </div>
+    </div>
+
+    <!-- PANTRY SECTION -->
+    <section class="section" aria-label="Pantry inventory">
+      <div class="container">
+
+        <!-- LOW STOCK ALERT -->
+        <div id="pantry-alert" style="display:none;" class="pantry-alert" role="alert" aria-live="polite">
+          <!-- Rendered by JS -->
+        </div>
+
+        <div class="pantry-layout">
+
+          <!-- SIDEBAR -->
+          <aside aria-label="Pantry categories and add item form">
+
+            <!-- CATEGORY NAVIGATION -->
+            <div class="pantry-sidebar__card">
+              <h3 style="font-family:var(--ff-display);font-size:1.1rem;margin-bottom:1rem;color:var(--honey);">Categories</h3>
+              <div id="pantry-cat-nav" class="pantry-categories" role="group" aria-label="Filter by category">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+            <!-- ADD ITEM FORM -->
+            <div class="pantry-sidebar__card">
+              <h3 style="font-family:var(--ff-display);font-size:1.1rem;margin-bottom:1.25rem;color:var(--honey);">Add Item</h3>
+              <form id="add-pantry-form" novalidate>
+                <div class="form-group">
+                  <label class="form-label" for="pantry-name">Item Name <span>*</span></label>
+                  <input type="text" id="pantry-name" name="name" class="form-input" placeholder="e.g. Almond flour" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="pantry-category">Category <span>*</span></label>
+                  <select id="pantry-category" name="category" class="form-input form-select" required>
+                    <option value="" disabled selected>Select…</option>
+                    <option value="Grains">Grains</option>
+                    <option value="Dairy">Dairy</option>
+                    <option value="Produce">Produce</option>
+                    <option value="Spices">Spices</option>
+                    <option value="Preserves">Preserves</option>
+                    <option value="Oils">Oils</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="pantry-qty">Quantity</label>
+                    <input type="number" id="pantry-qty" name="quantity" class="form-input" placeholder="500" min="0" step="0.1">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="pantry-unit">Unit</label>
+                    <input type="text" id="pantry-unit" name="unit" class="form-input" placeholder="g, ml, jars">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="pantry-threshold">Low Stock Alert at</label>
+                  <input type="number" id="pantry-threshold" name="lowThreshold" class="form-input" placeholder="100" min="0" step="0.1">
+                  <p class="form-hint">You'll be alerted when quantity falls to this amount.</p>
+                </div>
+                <button type="submit" class="btn btn--honey" style="width:100%;">Add to Pantry</button>
+              </form>
+            </div>
+
+            <!-- PANTRY STATS -->
+            <div class="pantry-sidebar__card" style="background:var(--amber-soft);border-color:rgba(200,144,42,0.2);">
+              <h3 style="font-family:var(--ff-display);font-size:1rem;color:var(--honey-dark);margin-bottom:1rem;">A Well-Stocked Pantry</h3>
+              <p style="font-size:0.82rem;color:var(--slate-light);line-height:1.7;">
+                The pantry is the heart of a settled kitchen. Keep it honest. Update quantities as you cook. Let the low-stock alerts do the worrying for you.
+              </p>
+              <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(200,144,42,0.2);">
+                <div style="display:flex;justify-content:space-between;font-size:0.82rem;margin-bottom:6px;">
+                  <span style="color:var(--slate-light);">Total items</span>
+                  <strong id="pantry-stat-total" style="color:var(--honey-dark);">—</strong>
+                </div>
+                <div style="display:flex;justify-content:space-between;font-size:0.82rem;">
+                  <span style="color:var(--slate-light);">Running low</span>
+                  <strong id="pantry-stat-low" style="color:var(--red);">—</strong>
+                </div>
+              </div>
+            </div>
+
+          </aside>
+
+          <!-- MAIN TABLE -->
+          <div class="pantry-main" role="region" aria-label="Pantry inventory table">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;">
+              <h2 style="font-family:var(--ff-display);font-size:1.4rem;">Inventory</h2>
+              <button class="btn btn--ghost btn--sm" id="reset-pantry-btn" style="font-size:0.78rem;opacity:0.6;">
+                Reset to Default
+              </button>
+            </div>
+            <div class="pantry-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Unit</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="pantry-tbody">
+                  <!-- Rendered by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <svg class="footer__hex-bg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <pattern id="footer-hex" x="0" y="0" width="70" height="80" patternUnits="userSpaceOnUse">
+          <path d="M35 2 L67 20 L67 56 L35 74 L3 56 L3 20 Z" fill="none" stroke="#fff" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="800" height="400" fill="url(#footer-hex)"/>
+    </svg>
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <div class="footer__wordmark">Honeycomb <span>Home</span></div>
+          <p class="footer__tagline">"A sweet and ordered home"</p>
+        </div>
+        <div>
+          <div class="footer__col-title">Navigate</div>
+          <ul class="footer__links" role="list">
+            <li><a href="index.html" class="footer__link">Home</a></li>
+            <li><a href="recipes.html" class="footer__link">Recipe Book</a></li>
+            <li><a href="planner.html" class="footer__link">Meal Planner</a></li>
+            <li><a href="pantry.html" class="footer__link">Pantry</a></li>
+            <li><a href="favourites.html" class="footer__link">Favourites</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Categories</div>
+          <ul class="footer__links" role="list">
+            <li><a href="recipes.html" class="footer__link">Baking</a></li>
+            <li><a href="recipes.html" class="footer__link">Dinner</a></li>
+            <li><a href="recipes.html" class="footer__link">Preserves</a></li>
+            <li><a href="recipes.html" class="footer__link">Breakfast</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Quick</div>
+          <ul class="footer__links" role="list">
+            <li><a href="planner.html" class="footer__link">Plan This Week</a></li>
+            <li><a href="favourites.html" class="footer__link">My Favourites</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2025 Honeycomb Home. Made with warmth and good butter.</span>
+        <span>All recipes, all yours.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // Pantry stats update and reset button
+    document.addEventListener('DOMContentLoaded', () => {
+      // Update stats display
+      function updateStats() {
+        const items = JSON.parse(localStorage.getItem('hh_pantry') || '[]');
+        const low = items.filter(i => parseFloat(i.quantity) <= parseFloat(i.lowThreshold));
+        const statTotal = document.getElementById('pantry-stat-total');
+        const statLow   = document.getElementById('pantry-stat-low');
+        if (statTotal) statTotal.textContent = items.length;
+        if (statLow)   statLow.textContent = low.length;
+      }
+      // Observe DOM changes to keep stats updated
+      const tbody = document.getElementById('pantry-tbody');
+      if (tbody) {
+        new MutationObserver(updateStats).observe(tbody, { childList: true, subtree: true });
+      }
+      setTimeout(updateStats, 200);
+
+      // Reset pantry to seed data
+      document.getElementById('reset-pantry-btn')?.addEventListener('click', () => {
+        if (confirm('Reset the pantry to default items? This will replace your current inventory.')) {
+          localStorage.removeItem('hh_pantry');
+          location.reload();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

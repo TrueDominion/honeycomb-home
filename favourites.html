@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favourites — Honeycomb Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand" aria-label="Honeycomb Home — Home">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16 3 L27 9 L27 23 L16 29 L5 23 L5 9 Z" fill="none" stroke="#C8902A" stroke-width="1.8"/>
+          <path d="M16 8 L23 12 L23 20 L16 24 L9 20 L9 12 Z" fill="#C8902A" opacity="0.15"/>
+          <path d="M16 11 L20 13.5 L20 18.5 L16 21 L12 18.5 L12 13.5 Z" fill="#C8902A" opacity="0.4"/>
+          <circle cx="16" cy="16" r="2" fill="#C8902A"/>
+        </svg>
+        <span class="nav__wordmark">Honeycomb <span>Home</span></span>
+      </a>
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="recipes.html" class="nav__link">Recipe Book</a></li>
+        <li><a href="planner.html" class="nav__link">Meal Planner</a></li>
+        <li><a href="pantry.html" class="nav__link">Pantry</a></li>
+        <li><a href="favourites.html" class="nav__link">Favourites</a></li>
+      </ul>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="page-content">
+
+    <!-- PAGE BANNER -->
+    <div class="page-banner" style="background:linear-gradient(135deg,#FFF9ED 0%, var(--plaster) 100%);">
+      <svg class="page-banner__hex" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M160 20 L290 95 L290 225 L160 300 L30 225 L30 95 Z" fill="none" stroke="#C8902A" stroke-width="1.5"/>
+        <path d="M160 60 L255 115 L255 225 L160 280 L65 225 L65 115 Z" fill="none" stroke="#C8902A" stroke-width="1"/>
+        <path d="M160 100 L225 136 L225 208 L160 244 L95 208 L95 136 Z" fill="#C8902A" opacity="0.06"/>
+      </svg>
+      <div class="container">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:var(--space-3);">
+          <span style="font-size:1.5rem;" aria-hidden="true">❤️</span>
+          <span class="page-banner__eyebrow" style="margin-bottom:0;">The ones you keep coming back to</span>
+        </div>
+        <h1 class="page-banner__title">Favourites</h1>
+        <p class="page-banner__desc">Your most-loved recipes, collected in one place. Tap the heart on any recipe to add it here.</p>
+      </div>
+    </div>
+
+    <!-- FAVOURITES GRID -->
+    <section class="section" aria-label="Favourite recipes">
+      <div class="container">
+        <div class="grid-3" id="favourites-grid" role="list" aria-label="Favourite recipe cards">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- INSPIRATION STRIP -->
+    <section class="section--sm" style="background:var(--cream);" aria-label="Kitchen inspiration">
+      <div class="container">
+        <div style="max-width:680px;margin:0 auto;text-align:center;padding:var(--space-12) 0;" class="reveal">
+          <!-- Bee SVG Illustration -->
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin:0 auto var(--space-5);" aria-hidden="true">
+            <ellipse cx="30" cy="36" rx="18" ry="11" fill="#C8902A" opacity="0.85"/>
+            <ellipse cx="30" cy="36" rx="18" ry="11" fill="none" stroke="#A07020" stroke-width="1.2"/>
+            <rect x="24" y="25" width="5" height="22" rx="2" fill="#3D4450" opacity="0.28"/>
+            <rect x="31" y="25" width="5" height="22" rx="2" fill="#3D4450" opacity="0.28"/>
+            <circle cx="47" cy="30" r="7" fill="#C8902A" opacity="0.85"/>
+            <circle cx="50" cy="27" r="2" fill="#3D4450" opacity="0.4"/>
+            <ellipse cx="27" cy="23" rx="14" ry="7" fill="rgba(200,191,175,0.55)" stroke="rgba(200,144,42,0.4)" stroke-width="1" transform="rotate(-18 27 23)"/>
+            <ellipse cx="34" cy="24" rx="11" ry="5" fill="rgba(200,191,175,0.4)" stroke="rgba(200,144,42,0.3)" stroke-width="1" transform="rotate(-8 34 24)"/>
+            <path d="M45 26 Q48 18 52 15" stroke="#3D4450" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.5"/>
+            <path d="M47 28 Q51 21 56 19" stroke="#3D4450" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.5"/>
+            <circle cx="52" cy="15" r="2" fill="#C8902A" opacity="0.75"/>
+            <circle cx="56" cy="19" r="2" fill="#C8902A" opacity="0.75"/>
+          </svg>
+
+          <h2 style="font-family:var(--ff-display);font-size:clamp(1.5rem,3.5vw,2.4rem);margin-bottom:var(--space-4);">
+            The recipes worth <em style="color:var(--honey);">keeping close.</em>
+          </h2>
+          <p style="color:var(--slate-light);font-size:var(--fs-md);line-height:1.75;max-width:50ch;margin:0 auto var(--space-8);">
+            Not every recipe earns a place here. These are the ones that get requested, that appear on birthdays, that you find yourself making with eyes half closed on a Sunday morning.
+          </p>
+          <a href="recipes.html" class="btn btn--honey">Explore All Recipes →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <svg class="footer__hex-bg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <pattern id="footer-hex" x="0" y="0" width="70" height="80" patternUnits="userSpaceOnUse">
+          <path d="M35 2 L67 20 L67 56 L35 74 L3 56 L3 20 Z" fill="none" stroke="#fff" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="800" height="400" fill="url(#footer-hex)"/>
+    </svg>
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <div class="footer__wordmark">Honeycomb <span>Home</span></div>
+          <p class="footer__tagline">"A sweet and ordered home"</p>
+        </div>
+        <div>
+          <div class="footer__col-title">Navigate</div>
+          <ul class="footer__links" role="list">
+            <li><a href="index.html" class="footer__link">Home</a></li>
+            <li><a href="recipes.html" class="footer__link">Recipe Book</a></li>
+            <li><a href="planner.html" class="footer__link">Meal Planner</a></li>
+            <li><a href="pantry.html" class="footer__link">Pantry</a></li>
+            <li><a href="favourites.html" class="footer__link">Favourites</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Categories</div>
+          <ul class="footer__links" role="list">
+            <li><a href="recipes.html" class="footer__link">Baking</a></li>
+            <li><a href="recipes.html" class="footer__link">Dinner</a></li>
+            <li><a href="recipes.html" class="footer__link">Preserves</a></li>
+            <li><a href="recipes.html" class="footer__link">Breakfast</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Quick</div>
+          <ul class="footer__links" role="list">
+            <li><a href="planner.html" class="footer__link">Plan This Week</a></li>
+            <li><a href="pantry.html" class="footer__link">Check Pantry</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2025 Honeycomb Home. Made with warmth and good butter.</span>
+        <span>All recipes, all yours.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

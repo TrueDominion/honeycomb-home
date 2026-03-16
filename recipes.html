@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Book — Honeycomb Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand" aria-label="Honeycomb Home — Home">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16 3 L27 9 L27 23 L16 29 L5 23 L5 9 Z" fill="none" stroke="#C8902A" stroke-width="1.8"/>
+          <path d="M16 8 L23 12 L23 20 L16 24 L9 20 L9 12 Z" fill="#C8902A" opacity="0.15"/>
+          <path d="M16 11 L20 13.5 L20 18.5 L16 21 L12 18.5 L12 13.5 Z" fill="#C8902A" opacity="0.4"/>
+          <circle cx="16" cy="16" r="2" fill="#C8902A"/>
+        </svg>
+        <span class="nav__wordmark">Honeycomb <span>Home</span></span>
+      </a>
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="recipes.html" class="nav__link">Recipe Book</a></li>
+        <li><a href="planner.html" class="nav__link">Meal Planner</a></li>
+        <li><a href="pantry.html" class="nav__link">Pantry</a></li>
+        <li><a href="favourites.html" class="nav__link">Favourites</a></li>
+      </ul>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="page-content">
+
+    <!-- PAGE BANNER -->
+    <div class="page-banner">
+      <svg class="page-banner__hex" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M160 20 L290 95 L290 225 L160 300 L30 225 L30 95 Z" fill="none" stroke="#C8902A" stroke-width="1.5"/>
+        <path d="M160 60 L255 115 L255 225 L160 280 L65 225 L65 115 Z" fill="none" stroke="#C8902A" stroke-width="1"/>
+        <path d="M160 100 L225 136 L225 208 L160 244 L95 208 L95 136 Z" fill="#C8902A" opacity="0.06"/>
+      </svg>
+      <div class="container">
+        <div class="page-banner__eyebrow">Your Collection</div>
+        <h1 class="page-banner__title">Recipe Book</h1>
+        <p class="page-banner__desc">Every recipe you love, in one place. Search, browse by category, and add new ones whenever inspiration strikes.</p>
+      </div>
+    </div>
+
+    <!-- RECIPE GRID SECTION -->
+    <section class="section" aria-label="Recipe collection">
+      <div class="container">
+
+        <!-- FILTER BAR -->
+        <div class="filter-bar" role="search" aria-label="Search and filter recipes">
+          <div class="filter-bar__search">
+            <span class="filter-bar__search-icon" aria-hidden="true">🔍</span>
+            <input
+              type="search"
+              id="recipe-search"
+              placeholder="Search recipes…"
+              aria-label="Search recipes by name or category"
+            >
+          </div>
+          <div class="filter-bar__chips" role="group" aria-label="Filter by category">
+            <button class="filter-chip active" data-category="All">All</button>
+            <button class="filter-chip" data-category="Baking">Baking</button>
+            <button class="filter-chip" data-category="Breakfast">Breakfast</button>
+            <button class="filter-chip" data-category="Lunch">Lunch</button>
+            <button class="filter-chip" data-category="Dinner">Dinner</button>
+            <button class="filter-chip" data-category="Preserves">Preserves</button>
+            <button class="filter-chip" data-category="Dessert">Dessert</button>
+          </div>
+          <button class="btn btn--honey btn--sm" id="add-recipe-btn" aria-label="Add a new recipe">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <line x1="7" y1="1" x2="7" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="1" y1="7" x2="13" y2="7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Add Recipe
+          </button>
+        </div>
+
+        <!-- RECIPE GRID -->
+        <div class="grid-3" id="recipe-grid" role="list" aria-label="Recipe cards">
+          <!-- Rendered by JS -->
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <svg class="footer__hex-bg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <pattern id="footer-hex" x="0" y="0" width="70" height="80" patternUnits="userSpaceOnUse">
+          <path d="M35 2 L67 20 L67 56 L35 74 L3 56 L3 20 Z" fill="none" stroke="#fff" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="800" height="400" fill="url(#footer-hex)"/>
+    </svg>
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <div class="footer__wordmark">Honeycomb <span>Home</span></div>
+          <p class="footer__tagline">"A sweet and ordered home"</p>
+        </div>
+        <div>
+          <div class="footer__col-title">Navigate</div>
+          <ul class="footer__links" role="list">
+            <li><a href="index.html" class="footer__link">Home</a></li>
+            <li><a href="recipes.html" class="footer__link">Recipe Book</a></li>
+            <li><a href="planner.html" class="footer__link">Meal Planner</a></li>
+            <li><a href="pantry.html" class="footer__link">Pantry</a></li>
+            <li><a href="favourites.html" class="footer__link">Favourites</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Categories</div>
+          <ul class="footer__links" role="list">
+            <li><a href="recipes.html" class="footer__link">Baking</a></li>
+            <li><a href="recipes.html" class="footer__link">Dinner</a></li>
+            <li><a href="recipes.html" class="footer__link">Preserves</a></li>
+            <li><a href="recipes.html" class="footer__link">Breakfast</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title">Quick</div>
+          <ul class="footer__links" role="list">
+            <li><a href="planner.html" class="footer__link">Plan This Week</a></li>
+            <li><a href="favourites.html" class="footer__link">My Favourites</a></li>
+            <li><a href="pantry.html" class="footer__link">Check Pantry</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2025 Honeycomb Home. Made with warmth and good butter.</span>
+        <span>All recipes, all yours.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ADD RECIPE MODAL -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <div class="modal__header">
+        <h2 class="modal__title" id="modal-title">Add a New Recipe</h2>
+        <button class="modal__close" id="modal-close" aria-label="Close modal">✕</button>
+      </div>
+      <form class="modal__body" id="add-recipe-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="recipe-title">Recipe Title <span>*</span></label>
+            <input type="text" id="recipe-title" name="title" class="form-input" placeholder="e.g. Honey Almond Cake" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="recipe-category">Category <span>*</span></label>
+            <select id="recipe-category" name="category" class="form-input form-select" required>
+              <option value="" disabled selected>Select a category</option>
+              <option value="Baking">Baking</option>
+              <option value="Breakfast">Breakfast</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Preserves">Preserves</option>
+              <option value="Dessert">Dessert</option>
+              <option value="Soup">Soup</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="recipe-description">Description</label>
+          <textarea id="recipe-description" name="description" class="form-input form-textarea" placeholder="A brief, evocative description of the dish…" rows="2"></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="recipe-prep">Prep Time <span>*</span></label>
+            <input type="text" id="recipe-prep" name="prepTime" class="form-input" placeholder="e.g. 30 min">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="recipe-cook">Cook Time</label>
+            <input type="text" id="recipe-cook" name="cookTime" class="form-input" placeholder="e.g. 45 min">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="recipe-servings">Servings</label>
+          <input type="text" id="recipe-servings" name="servings" class="form-input" placeholder="e.g. 4 people">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="recipe-ingredients">Ingredients</label>
+          <textarea id="recipe-ingredients" name="ingredients" class="form-input form-textarea" placeholder="One ingredient per line. Format: Name — Amount&#10;e.g. Plain flour — 350g&#10;Unsalted butter — 80g&#10;Whole milk — 160ml" rows="6"></textarea>
+          <p class="form-hint">Format each line as: Ingredient Name — Amount (e.g. Plain flour — 350g)</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="recipe-steps">Method Steps</label>
+          <textarea id="recipe-steps" name="steps" class="form-input form-textarea" placeholder="One step per line&#10;e.g. Preheat oven to 200°C and line a baking sheet.&#10;Combine dry ingredients in a large bowl.&#10;Add butter and rub to breadcrumb texture." rows="6"></textarea>
+          <p class="form-hint">Write each step on a new line. They'll be numbered automatically.</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="recipe-notes">Cook's Notes</label>
+          <textarea id="recipe-notes" name="notes" class="form-input form-textarea" placeholder="Tips, variations, or anything worth remembering…" rows="3"></textarea>
+        </div>
+      </form>
+      <div class="modal__footer">
+        <button type="button" class="btn btn--ghost" id="modal-cancel-btn">Cancel</button>
+        <button type="submit" form="add-recipe-form" class="btn btn--honey">Save Recipe</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    document.getElementById('modal-cancel-btn')?.addEventListener('click', () => {
+      document.getElementById('modal-overlay').classList.remove('open');
+    });
+  </script>
+</body>
+</html>
